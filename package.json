@@ -1,0 +1,28 @@
+{
+  "name": "qa.automationexercise-api.pactumjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0",
+    "jest-html-reporter": "^4.1.0",
+    "joi": "^17.13.3",
+    "pactum": "^3.7.6"
+  },
+  "jest": {
+  "reporters": [
+    "default",
+    "jest-html-reporter"
+  ]
+},
+  "jest-html-reporter": {
+  "outputPath": "relatorios/test-relatorio.html",
+  "pageTitle": "Relatório de Testes - Automacao API"
+}
+}
