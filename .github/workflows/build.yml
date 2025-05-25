@@ -34,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: relatorio-testes
-          path: relatorios/test-relatorio
+          path: relatorios/
