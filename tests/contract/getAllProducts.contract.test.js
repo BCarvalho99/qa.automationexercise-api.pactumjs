@@ -1,7 +1,6 @@
 const {spec} = require('pactum');
 const { respSchema } = require('../schemas/productSchema');
-
-const apiURL = 'https://automationexercise.com/api';
+const { apiURL } = require('../utils/config');
 
 describe('Produtos - Testes de Contrato', ()=>{
 
