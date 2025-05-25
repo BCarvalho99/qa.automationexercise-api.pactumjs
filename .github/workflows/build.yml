@@ -1,0 +1,39 @@
+name: Exercise API Tests
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+    branches:
+      - develop
+      - master
+
+jobs:
+  run-api-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Executar testes de API
+        run: npx jest
+
+      - name: Upload de relatórios de testes (opcional)
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: relatorio-testes
+          path: relatorios/test-relatorio
+          
+        

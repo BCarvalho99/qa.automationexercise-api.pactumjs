@@ -79,9 +79,20 @@ test('Deve deletar usuário existente', async () => {
       .expectStatus(200)
       .returns('res.body');
 
-    expect(response.responseCode).not.toBe(200);
+    expect(response.responseCode).toBe(400);
     expect(response.message).toBeDefined();
   });
+
+  test('Não deve deletar usuário sem informar e-mail', async () => {
+  const response = await spec()
+    .delete(`${apiURL}/deleteAccount`)
+    .withForm({ password: userData.password }) 
+    .expectStatus(200)
+    .returns('res.body');
+
+  expect(response.responseCode).toBe(400);
+  expect(response.message).toBeDefined();
+});
 
 
 })
