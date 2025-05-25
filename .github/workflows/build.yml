@@ -28,10 +28,3 @@ jobs:
 
       - name: Executar testes de API
         run: npx jest
-
-      - name: Upload de relatórios de testes (opcional)
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: relatorio-testes
-          path: relatorios/test-relatorio
